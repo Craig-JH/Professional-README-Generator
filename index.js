@@ -1,9 +1,10 @@
 // TODO: Include packages needed for this application
 
 const inquirer = require("inquirer");
+const generatePage = require('./Develop/utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = () => {
+const promptQuestions = () => {
   return inquirer.prompt([
     {
       type: "input",
@@ -23,9 +24,9 @@ const questions = () => {
 
 const promptSections = (readmeData) => {
   console.log(`
-    =================
-    Add a New Section
-    =================
+    =============
+    Add Sections
+    =============
     `);
 
   if (!readmeData.projects) {
@@ -73,11 +74,17 @@ const promptSections = (readmeData) => {
     });
 };
 
+promptQuestions()
+  .then(promptSections)
+  .then(readmeData => {
+    return generatePage(readmeData);
+  })
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to initialize app
+// function init() {}
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();

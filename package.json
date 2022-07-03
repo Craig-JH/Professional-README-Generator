@@ -1,5 +1,5 @@
 {
-  "name": "professional-readme-generator",
+  "name": "q",
   "version": "1.0.0",
   "description": "[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Craig-JH/Professional-Readme-Generator/issues"
   },
-  "homepage": "https://github.com/Craig-JH/Professional-Readme-Generator#readme"
+  "homepage": "https://github.com/Craig-JH/Professional-Readme-Generator#readme",
+  "dependencies": {
+    "inquirer": "8.2.4"
+  }
 }
