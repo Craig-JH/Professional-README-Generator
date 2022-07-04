@@ -1,11 +1,37 @@
 // TODO: Include packages needed for this application
-
+const { writeFile, copyFile } = require('./Develop/utils/generateMarkdown.js');
 const inquirer = require("inquirer");
-const generatePage = require('./Develop/utils/generateMarkdown');
+// const generatePage = require('./Develop/utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const promptQuestions = () => {
   return inquirer.prompt([
+    {
+      type: "input",
+      name: "title",
+      message: "What is the title of your project (Required)",
+      validate: (titleInput) => {
+        if (titleInput) {
+          return true;
+        } else {
+          console.log("Please enter your project title!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "description",
+      message: "Please provide a description of the project (Required)",
+      validate: (titleInput) => {
+        if (titleInput) {
+          return true;
+        } else {
+          console.log("Please enter your project title!");
+          return false;
+        }
+      },
+    },
     {
       type: "input",
       name: "title",
@@ -79,6 +105,19 @@ promptQuestions()
   .then(readmeData => {
     return generatePage(readmeData);
   })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
+  })
+  .then(writeFileResponse => {
+    console.log(writeFileResponse);
+    return copyFile();
+  })
+  .then(copyFileResponse => {
+    console.log(copyFileResponse);
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
