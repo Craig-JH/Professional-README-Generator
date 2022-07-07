@@ -29,9 +29,7 @@ const userQuestions = () => {
         if (descriptionInput) {
           return true;
         } else {
-          console.log(
-            "You need to provide a description of your project!"
-          );
+          console.log("You need to provide a description of your project!");
           return false;
         }
       },
@@ -40,8 +38,7 @@ const userQuestions = () => {
     {
       type: "input",
       name: "installation",
-      message:
-        "Please provide a description of how to install your project:",
+      message: "Please provide a description of how to install your project:",
     },
 
     {
@@ -52,7 +49,7 @@ const userQuestions = () => {
 
     {
       type: "input",
-      name: "credits",
+      name: "contributors",
       message: "Please list the contributers on this project:",
     },
 
@@ -68,8 +65,8 @@ const userQuestions = () => {
       message: "Please select a license from the list:",
       choices: [
         "Apache 2.0 License",
-        "Eclipse Public License 1.0",      
-        "IBM Public License Version 1.0",     
+        "Eclipse Public License 1.0",
+        "IBM Public License Version 1.0",
         "MIT License",
         "The Unlicense",
       ],
