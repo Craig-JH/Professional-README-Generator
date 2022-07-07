@@ -59,8 +59,10 @@ module.exports = (generateMarkdown) => {
     generateMarkdown.license
   } license. For further information, please visit [here](https://choosealicense.com/licenses/).
   ## Questions
-  If you would like to contact me with questions, I can be reached at
-  
+  If you would like to visit my GitHub page or contact me with questions, I can be reached at
+  GitHub: [${generateMarkdown.github}](https://github.com/${
+    generateMarkdown.github
+  })
   Email: <${generateMarkdown.email}>
 `;
 };
